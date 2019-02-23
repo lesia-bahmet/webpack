@@ -1,7 +1,7 @@
 // Core
-const webpack = require('webpack');
-const getConfig = require('./config/webpack.config');
-const chalk = require('chalk');
+import webpack from 'webpack';
+import getConfig from './config/webpack.config';
+import chalk from 'chalk';
 
 const compiler = webpack(getConfig());
 compiler.run((errors, stats)=>{
