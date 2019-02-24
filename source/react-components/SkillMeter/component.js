@@ -8,7 +8,7 @@ import { Button } from '../Button';
 const SkillMeter = hot(
     class extends Component {
         state = {
-            skill: 11,
+            skill: 22,
         };
 
         inc = () => this.setState(({ skill }) => ({

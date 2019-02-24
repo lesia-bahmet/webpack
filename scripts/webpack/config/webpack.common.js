@@ -24,10 +24,5 @@ module.exports = () => {
                     title: 'Учим вебпак!!!',
                 }),
             ],
-            resolve: {
-                alias: {
-                    'react-dom': '@hot-loader/react-dom',
-                }
-            }
         });
 };

@@ -9,7 +9,7 @@ import { SOURCE } from '../constants';
 export default () => {
 
     return merge(getCommonConfig(), {
-        mode: 'none',
+        mode: 'development',
         devtool: false,
         entry: [SOURCE, 'webpack-hot-middleware/client?reload=true&quiet=true'],
         plugins: [
