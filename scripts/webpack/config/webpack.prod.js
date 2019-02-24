@@ -7,20 +7,23 @@ import getCommonConfig from './webpack.common';
 // Constants
 import { PROJECT_ROOT, SOURCE, BUILD } from '../constants';
 
-export default () => {
+// Modules
+import * as modules from '../modules';
 
-    return merge(getCommonConfig(), {
-        mode: 'none',
-        devtool: false,
-        entry: [ SOURCE ],
-        plugins: [
-            new CleanWebpackPlugin(
-                BUILD,
-                {
-                    root: PROJECT_ROOT,
+export default () => {
+    return merge(
+        getCommonConfig(),
+        {
+            mode:    'none',
+            devtool: false,
+            entry:   [ SOURCE ],
+            plugins: [
+                new CleanWebpackPlugin([ 'dist', 'build' ], {
+                    root:    PROJECT_ROOT,
                     verbose: true,
-                },
-            ),
-        ],
-    });
+                }),
+            ],
+        },
+        modules.loadProdCss(),
+    );
 };

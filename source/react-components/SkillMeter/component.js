@@ -4,6 +4,12 @@ import { hot } from 'react-hot-loader/root';
 // Components
 import Styles from './styles.css';
 import { Button } from '../Button';
+import cat from '../../theme/assets/images/cat.jpg';
+import reactLogo, {ReactComponent as ReactLogo} from '../../theme/assets/images/react.svg';
+
+console.log('cat ', cat);
+console.log('reactLogo ', reactLogo);
+console.log('ReactLogo ', ReactLogo);
 
 const SkillMeter = hot(
     class extends Component {
@@ -23,9 +29,13 @@ const SkillMeter = hot(
             const { skill } = this.state;
 
             return (
-                <section className = { Styles.skillMeter }>
+                <section style={{
+                    '--heading-font-size': `${skill}px`,
+                }} className = { Styles.skillMeter }>
                     <h1>My Webpack skill: {skill}</h1>
-                    {/*<img src = { cat } />*/}
+                    <img src = { cat } />
+                    <img src = { reactLogo } />
+                    <ReactLogo width={50} />
                     <div>
                         <Button
                             text = 'Increment'

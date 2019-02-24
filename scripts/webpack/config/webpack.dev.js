@@ -6,14 +6,21 @@ import getCommonConfig from './webpack.common';
 // Constants
 import { SOURCE } from '../constants';
 
-export default () => {
+// Modules
+import * as modules from '../modules';
 
-    return merge(getCommonConfig(), {
-        mode: 'development',
-        devtool: false,
-        entry: [SOURCE, 'webpack-hot-middleware/client?reload=true&quiet=true'],
-        plugins: [
-            new HotModuleReplacementPlugin(),
-        ],
-    });
+export default () => {
+    return merge(
+        getCommonConfig(),
+        {
+            mode:    'development',
+            devtool: 'cheap-module-eval-source-map',
+            entry:   [
+                SOURCE,
+                'webpack-hot-middleware/client?reload=true&quiet=true',
+            ],
+            plugins: [ new HotModuleReplacementPlugin() ],
+        },
+        modules.loadDevCss(),
+    );
 };

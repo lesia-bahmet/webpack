@@ -14,4 +14,5 @@
 // }
 
 // import './simple-components/javascript';
+import './theme/main.css';
 import './react-components/SkillMeter';

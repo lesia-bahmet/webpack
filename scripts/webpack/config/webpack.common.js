@@ -12,11 +12,14 @@ module.exports = () => {
 
     return merge(
         modules.loadJavaScript(),
-        modules.loadCss(),
+        modules.loadImages(),
+        modules.loadSvg(),
+        modules.loadFonts(),
+        modules.connectHtml(),
         {
             output: {
                 path: BUILD,
-                filename: 'bundle.js',
+                filename: 'js/bundle.js',
             },
             plugins: [
                 new HtmlWebpackPlugin({

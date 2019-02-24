@@ -1,11 +1,12 @@
 // Network
-const { path: PROJECT_ROOT } = require('app-root-path');
-const { resolve } = require('path');
+import { path as PROJECT_ROOT } from 'app-root-path';
+import { resolve } from 'path';
 
-exports.PROJECT_ROOT = PROJECT_ROOT;
-exports.SOURCE = resolve(PROJECT_ROOT, './source');
-exports.BUILD = resolve(PROJECT_ROOT, './build');
-exports.STATIC = resolve(PROJECT_ROOT, './static');
+export { PROJECT_ROOT };
+export const SOURCE = resolve(PROJECT_ROOT, './source');
+export const BUILD = resolve(PROJECT_ROOT, './build');
+export const STATIC = resolve(PROJECT_ROOT, './static');
+export const CHUNK_NAME_ASSET = '[name].[hash:5].[ext]';
 
-exports.HOST = 'localhost';
-exports.PORT = 3000;
+export const HOST = 'localhost';
+export const PORT = 3000;
