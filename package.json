@@ -7,6 +7,7 @@
         "start": "cross-env-shell NODE_ENV=development node --require @babel/register \"./scripts/webpack/start.js\"",
         "build": "cross-env-shell NODE_ENV=production node --require @babel/register \"./scripts/webpack/build.js\"",
         "serve": "serve -s \"./build\"",
+        "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "checkpoint": "cross-env-shell NODE_ENV=development node --require @babel/register \"./scripts/git/checkpoint.js\"",
         "sync": "cross-env-shell NODE_ENV=development node --require @babel/register \"./scripts/git/sync.js\""
     },
@@ -14,6 +15,7 @@
         "@babel/core": "^7.2.2",
         "@babel/plugin-proposal-class-properties": "^7.3.3",
         "@babel/plugin-syntax-async-generators": "7.2.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
         "@babel/preset-env": "^7.3.1",
         "@babel/preset-react": "^7.0.0",
         "@babel/register": "7.0.0",
@@ -41,6 +43,7 @@
         "serve": "^10.1.2",
         "style-loader": "^0.23.1",
         "webpack": "4.29.5",
+        "webpack-bundle-analyzer": "^3.0.4",
         "webpack-cli": "3.2.3",
         "webpack-dev-server": "^3.2.0",
         "webpack-hot-middleware": "^2.24.3",
@@ -48,6 +51,8 @@
     },
     "dependencies": {
         "react": "^16.8.3",
-        "react-dom": "^16.8.3"
+        "react-dom": "^16.8.3",
+        "react-loadable": "^5.5.0",
+        "react-router-dom": "^4.3.1"
     }
 }

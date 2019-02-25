@@ -4,7 +4,7 @@
 // let demoComponent = component();
 //
 // document.body.appendChild(demoComponent);
-//
+
 // if(module.hot){
 //     module.hot.accept('./simple-components/dom', () => {
 //         const nextComponent = component();
@@ -14,5 +14,7 @@
 // }
 
 // import './simple-components/javascript';
-import './theme/main.css';
-import './react-components/SkillMeter';
+// import './theme/main.css';
+// import './react-components/SkillMeter';
+
+import './react-components/Carousel';
